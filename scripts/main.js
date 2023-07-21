@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const formSearch = document.querySelector('#users-search');
         
         if (usernameProfile !== ''){
-            fetch(`http://api.github.com/users/${usernameProfile}`)
+            fetch(`https://api.github.com/users/${usernameProfile}`)
                 .then(function(res){
                     return res.json();
             
