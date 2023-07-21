@@ -52,8 +52,7 @@ header .container {
     background-color: var(--header-color);
     color: var(--bg-color);
     padding: 8px 16px;
-    display: none;
-    margin-top: 24px;
+    display: none;    
     text-decoration: none;
 }
 
@@ -77,6 +76,17 @@ header .container {
     font-size: .3em;
 }
 
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
 #users-search{
     justify-content: center;    
+}
+
+#btn-voltar{
+    display: none;    
 }

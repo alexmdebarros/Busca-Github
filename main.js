@@ -10,13 +10,12 @@ document.addEventListener('DOMContentLoaded', function(){
     const inputUsername = document.querySelector('#username-input');
     const numbersTable = document.querySelector('#numbers');
     const alertError = document.querySelector('#alert');
-    
-
+    const btnReset = document.querySelector('#btn-voltar');
     
     btnFetch.addEventListener('click', function(){
         //trim tira os espaços que possa conter ao usuário digitar
         const usernameProfile = inputUsername.value.trim();
-        const formSearch = document.querySelector('#users-search')
+        const formSearch = document.querySelector('#users-search');
         
         if (usernameProfile !== ''){
             fetch(`http://api.github.com/users/${usernameProfile}`)
@@ -37,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     numbersTable.style.display = 'grid';
                     formSearch.style.display = 'none';
                     alertError.style.display = 'none';
+                    btnReset.style.display = 'inline';
                     
 
                 })
@@ -48,9 +48,11 @@ document.addEventListener('DOMContentLoaded', function(){
             alertError.style.display = 'inline';
             alertError.innerText = 'Você não digitou um usuário válido!';
         }
-        
+
+    });
+    
+    btnReset.addEventListener('click', function(){
+        window.location.reload();
     })
 
-    
-    
 })
